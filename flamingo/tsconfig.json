@@ -1,0 +1,5 @@
+{
+  "files": [],
+  "references": [{ "path": "./tsconfig.app.json" }],
+  "include": ["src", "vite.config.ts", "src/vite-env.d.ts"]
+}

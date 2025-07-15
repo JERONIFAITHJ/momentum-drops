@@ -1,0 +1,57 @@
+{
+  "name": "momentum-drops",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A monorepo for momentum drops",
+  "keywords": [],
+  "author": "Jeroni Faith J",
+  "license": "ISC",
+  "type": "module",
+  "workspaces": [
+    "flamingo",
+    "phoenix",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.31.0",
+    "@testing-library/jest-dom": "^6.1.0",
+    "@testing-library/react": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-compat": "^6.0.2",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "husky": "^9.0.11",
+    "jsdom": "^24.1.0",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.3.3",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.37.0",
+    "vite": "^5.3.4",
+    "vitest": "^1.6.0"
+  },
+  "scripts": {
+    "dev": "yarn build && cd flamingo && vite",
+    "build": "echo \"Building frontend...\" && cd flamingo && vite build",
+    "lint:js": "set NODE_OPTIONS=--max_old_space_size=4096 && eslint .",
+    "lint": "yarn lint:js",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "precommit": "lint-staged",
+    "prepare": "husky",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest run --coverage"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,css,scss,less,json,md,html,yml}": "prettier --write"
+  }
+}
