@@ -20,6 +20,7 @@
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
     "@vitest/coverage-v8": "^1.6.0",
+    "concurrently": "^9.2.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-compat": "^6.0.2",
@@ -38,7 +39,7 @@
     "vitest": "^1.6.0"
   },
   "scripts": {
-    "dev": "yarn build && cd flamingo && vite",
+    "dev": "concurrently \"yarn workspace flamingo dev\" \"yarn workspace phoenix dev\"",
     "build": "echo \"Building frontend...\" && cd flamingo && vite build",
     "lint:js": "set NODE_OPTIONS=--max_old_space_size=4096 && eslint .",
     "lint": "yarn lint:js",
