@@ -1,14 +1,12 @@
-import { lazy, Suspense } from 'react'
-import ErrorBoundary from '../components/ErrorBoundary'
+import { lazy } from 'react'
+import RouteWrapper from '../components/RouteWrapper'
 
 const Comp = lazy(() => import('../App'))
 
 const Landing = () => (
-  <ErrorBoundary>
-    <Suspense fallback={<h1>Loading...</h1>}>
-      <Comp />
-    </Suspense>
-  </ErrorBoundary>
+  <RouteWrapper>
+    <Comp />
+  </RouteWrapper>
 )
 
 export default Landing
