@@ -1,7 +1,5 @@
-import Layout from './Layout'
-
 const NotFound = () => {
-  return <Layout>404 Not Found</Layout>
+  return <div>404 Not Found</div>
 }
 
 export default NotFound

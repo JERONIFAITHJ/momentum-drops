@@ -1,7 +1,5 @@
-import Layout from './components/Layout'
-
 function App() {
-  return <Layout>lorem500</Layout>
+  return <div>lorem500</div>
 }
 
 export default App

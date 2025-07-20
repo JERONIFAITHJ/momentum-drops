@@ -1,5 +1,6 @@
 import { Suspense, type ReactNode } from 'react'
 import ErrorBoundary from './ErrorBoundary'
+import Layout from './Layout'
 
 interface RouteWrapperProps {
   children: ReactNode
@@ -8,7 +9,9 @@ interface RouteWrapperProps {
 const RouteWrapper = ({ children }: RouteWrapperProps) => {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <Layout>
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      </Layout>
     </ErrorBoundary>
   )
 }
